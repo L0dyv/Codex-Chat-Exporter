@@ -29,6 +29,10 @@ function setStatus(kind, text) {
 function setResult(message, tone = "neutral") {
   elements.result.className = `result-box-body result-${tone}`;
   elements.result.textContent = message;
+  const box = elements.result.closest(".result-box");
+  if (box) {
+    box.className = `result-box result-box--${tone}`;
+  }
 }
 
 function deriveFileName(thread) {
@@ -206,6 +210,7 @@ async function handleExport(event) {
   };
 
   elements.submitButton.disabled = true;
+  elements.submitButton.classList.add("is-loading");
   setResult("Exporting Markdown...", "neutral");
 
   try {
@@ -226,6 +231,7 @@ async function handleExport(event) {
   } catch (error) {
     setResult(error.message, "error");
   } finally {
+    elements.submitButton.classList.remove("is-loading");
     updateExportAvailability();
   }
 }
