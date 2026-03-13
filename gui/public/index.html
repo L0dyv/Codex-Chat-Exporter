@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex Chat Export</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Local Export Console</p>
+          <h1>Codex Chat Export</h1>
+        </div>
+        <div class="status-card">
+          <span id="status-dot" class="status-dot status-idle"></span>
+          <div>
+            <p class="status-label">Codex Status</p>
+            <strong id="status-text">Checking...</strong>
+          </div>
+          <button id="refresh-button" class="ghost-button" type="button">Refresh</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel thread-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Recent Threads</p>
+              <h2>Choose A Session</h2>
+            </div>
+            <p class="panel-note">You can still enter a thread ID manually if the list is empty.</p>
+          </div>
+          <div id="thread-list" class="thread-list"></div>
+        </section>
+
+        <section class="panel export-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Export</p>
+              <h2>Markdown Output</h2>
+            </div>
+            <p class="panel-note">The export directory must be configured before the first export.</p>
+          </div>
+
+          <div class="directory-picker-block">
+            <div>
+              <p class="field-label">Default Save Directory</p>
+              <div id="output-dir-display" class="directory-display">Not configured yet.</div>
+            </div>
+            <button id="choose-directory-button" class="secondary-button" type="button">Choose Folder</button>
+          </div>
+
+          <form id="export-form" class="export-form">
+            <label class="field">
+              <span>Thread ID</span>
+              <input id="thread-id" name="threadId" type="text" placeholder="Paste a thread id or pick one from the list" required>
+            </label>
+
+            <label class="field">
+              <span>File Name</span>
+              <input id="file-name" name="fileName" type="text" placeholder="Leave blank to derive from thread title">
+            </label>
+
+            <label class="toggle">
+              <input id="with-tools" name="withTools" type="checkbox">
+              <span>Include tool calls and command output</span>
+            </label>
+
+            <button id="submit-button" class="primary-button" type="submit">Export Markdown</button>
+          </form>
+
+          <section class="result-box">
+            <p class="panel-kicker">Result</p>
+            <div id="result" class="result-empty">No export has been run yet.</div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div id="setup-modal" class="modal-backdrop hidden">
+      <section class="modal-card">
+        <p class="panel-kicker">Setup Required</p>
+        <h2>Choose Your Default Save Directory</h2>
+        <p class="modal-copy">Before exporting Markdown, set a default folder once. The app will reuse it for later exports until you change it.</p>
+        <button id="modal-choose-directory-button" class="primary-button" type="button">Choose Folder</button>
+      </section>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
