@@ -1,8 +1,10 @@
 *Vibe coded.*
 
-# Codex Chat Exporter
+# Codex Chat Exporter v0.1.0
 
 将 Codex 对话线程导出为 Markdown 文件。
+
+![Codex Chat Exporter 界面](assets/screenshot.png)
 
 ## 环境要求
 

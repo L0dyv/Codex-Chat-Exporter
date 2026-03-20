@@ -1,8 +1,10 @@
 *Vibe coded.*
 
-# Codex Chat Exporter
+# Codex Chat Exporter v0.1.0
 
 Export Codex chat threads to Markdown files.
+
+![Codex Chat Exporter GUI](assets/screenshot.png)
 
 ## Requirements
 
