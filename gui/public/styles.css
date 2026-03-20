@@ -92,6 +92,19 @@ h1 {
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
 }
 
+.version-tag {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.38em;
+  font-weight: 600;
+  vertical-align: middle;
+  padding: 3px 10px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: rgba(180, 81, 45, 0.1);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
 h2 {
   font-size: 1.3rem;
   color: var(--ink);

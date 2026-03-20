@@ -446,7 +446,7 @@ if (require.main === module) {
     port: process.env.PORT ? Number(process.env.PORT) : DEFAULT_PORT,
   })
     .then((app) => {
-      console.log(`Codex Chat Export GUI running at ${app.url}`);
+      console.log(`Codex Chat Export v0.1.0 running at ${app.url}`);
       console.log(`Settings file: ${SETTINGS_PATH}`);
     })
     .catch((error) => {
