@@ -10,7 +10,7 @@ Export Codex chat threads to Markdown files.
 
 - Node.js on PATH
 - `codex` CLI on PATH (used via `codex app-server`)
-- Windows is required for the GUI folder picker; the CLI works cross-platform
+- Windows is required for the GUI folder picker
 
 No install step. The project uses only Node.js built-ins — no package manager or `npm install` needed.
 
@@ -32,22 +32,6 @@ From the GUI you can:
 - Or enter a thread ID manually
 - Toggle "Include tool calls" to include plans, commands, and file changes
 - Click Export to write the Markdown file
-
-## CLI
-
-```
-node script/export-codex-thread.js <THREAD_ID> [OUT.md] [--with-tools]
-```
-
-Examples:
-
-```
-node script/export-codex-thread.js thread-123
-node script/export-codex-thread.js thread-123 exported-chats/my-thread.md
-node script/export-codex-thread.js thread-123 exported-chats/my-thread.md --with-tools
-```
-
-If no output path is given, the file is written to the current directory with a name derived from the thread.
 
 ## Output
 

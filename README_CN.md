@@ -10,7 +10,7 @@
 
 - Node.js 已加入 PATH
 - `codex` CLI 已加入 PATH（通过 `codex app-server` 使用）
-- GUI 的文件夹选择功能仅支持 Windows；CLI 可跨平台使用
+- GUI 的文件夹选择功能仅支持 Windows
 
 无需安装步骤。本项目仅使用 Node.js 内置模块，无需包管理器或 `npm install`。
 
@@ -32,22 +32,6 @@ node gui/server.js
 - 或手动输入线程 ID
 - 勾选"Include tool calls"以包含计划、命令和文件变更内容
 - 点击 Export 写出 Markdown 文件
-
-## 命令行（CLI）
-
-```
-node script/export-codex-thread.js <THREAD_ID> [OUT.md] [--with-tools]
-```
-
-示例：
-
-```
-node script/export-codex-thread.js thread-123
-node script/export-codex-thread.js thread-123 exported-chats/my-thread.md
-node script/export-codex-thread.js thread-123 exported-chats/my-thread.md --with-tools
-```
-
-若不指定输出路径，文件将写入当前目录，文件名根据线程内容自动生成。
 
 ## 输出内容
 
